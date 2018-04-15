@@ -7,7 +7,7 @@ jobs:
   build:
     docker:
       # specify the version you desire here
-      - image: circleci/node:9.11.1-stretch-browse
+      - image: circleci/node:9
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -48,8 +48,8 @@ jobs:
       - store_test_results: # special step to upload test results for display in Test Summary
           path: test-results.xml
 
-deployment:
-  prod:
-    branch: master
-    heroku:
-      appname: react-cd
+  deploy:
+    production:
+      branch: master
+      heroku:
+        appname: react-cd
