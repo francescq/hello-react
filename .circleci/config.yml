@@ -36,8 +36,8 @@ jobs:
       # run tests!
       - run: yarn test
 
-    deploy:
-      staging:
-        branch: master
-        heroku:
-          appname: react-cd
+deployment:
+  prod:
+    branch: master
+    heroku:
+      appname: react-cd
