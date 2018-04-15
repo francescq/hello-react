@@ -48,7 +48,7 @@ jobs:
       - store_test_results: # special step to upload test results for display in Test Summary
           path: test-results.xml
 
-  deploy-job:
+  deploy-jobs:
     docker:
       - image: my-image
     working_directory: /tmp/my-project
