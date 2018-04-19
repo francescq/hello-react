@@ -27,5 +27,13 @@
        "prettier --single-quote --write",
        "git add"
      ]
+  },
+  "jest": {
+    "collectCoverageFrom" : [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/public/"
+    ],
+    "coverageReporters": ["text"]
   }
 }
