@@ -6,6 +6,6 @@ export default class Avatar extends React.Component {
   }
 
   render() {
-    return <img src={this.props.src} />;
+    return <img src={this.props.src} alt={this.props.alt} />;
   }
 }
