@@ -31,6 +31,7 @@ class App extends Component {
         </p>
         <p>
           <button onClick={this.loadModuleA}>Load</button>
+          Deployed through CircleCi to Heroku
         </p>
       </div>
     );
