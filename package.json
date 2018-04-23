@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "husky": "^0.14.3",
-    "jest-cli": "20.0.4",
     "lint-staged": "^7.0.4",
     "prettier": "^1.12.1",
     "react": "^16.3.1",
@@ -14,13 +13,16 @@
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "jest-cli": "20.0.4",
+    "jest-junit": "^3.6.0",
     "react-test-renderer": "^16.3.1"
   },
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "CI=true react-scripts test --env=jsdom",
+    "test": "CI=true react-scripts test --env=jsdom --ci --testResultsProcessor=\"jest-junit\"",
     "eject": "react-scripts eject"
   },
   "lint-staged": {
