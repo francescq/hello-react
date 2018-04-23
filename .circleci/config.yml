@@ -45,9 +45,6 @@ jobs:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
-      # run tests!
-      - run: yarn test
-
       - run: # run coverage report
           name: code-coverage
           command: 'yarn test --coverage'
