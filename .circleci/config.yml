@@ -60,7 +60,7 @@ jobs:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
-      - store_artifacts
+      - store_artifacts:
           path: coverage/lcov-report
           prefix: coverage
       - store_test_results: # special step to upload test results for display in Test Summary
