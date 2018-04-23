@@ -39,15 +39,20 @@ jobs:
       - run:
           name: "JavaScript Linter"
           # yarn here makes sure we are using the local jest binary
-          command: yarn eslint -- --format junit -o reports/junit/js-lint-results.xml
+          command: yarn eslint --format junit -o reports/junit/js-lint-results.xml
       # Note: this hasn't changed. Don't add this twice!
       - store_test_results:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
+
       - run: # run coverage report
           name: code-coverage
           command: 'yarn test --coverage'
+      - store_artifacts:
+          path: coverage/lcov-report
+          prefix: coverage
+      
       - run:
           name: Jest Suite
           command: yarn jest tests --ci --testResultsProcessor="jest-junit"
@@ -57,11 +62,6 @@ jobs:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
-      - store_artifacts:
-          path: coverage/lcov-report
-          prefix: coverage
-      - store_test_results: # special step to upload test results for display in Test Summary
-          path: test-results.xml
 
   deploy-jobs:
     docker:
